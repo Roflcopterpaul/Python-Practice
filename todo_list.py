@@ -28,7 +28,7 @@ def add_to_list(new_item):
 while True:
     # ask for new items
     # able to quit the app
-    new_item = input("> ")
+    new_item = input("> ").upper().strip()
     if new_item == "DONE":
         break
     if new_item == "SHOW":
