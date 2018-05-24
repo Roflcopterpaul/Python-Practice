@@ -2,8 +2,8 @@
 #add textwrap_print() to all the text
 #add "I don't know" or "Kind of" functions (e.g., ***If they don't know if it's in Huzzah, give directions on how to find that.)
 #[when all yes's] - gap?
-    """We know this
-    can be stressful ..."""
+    #"We know this
+    #can be stressful ..."
 #When sending an email to HR, give the option to notify them or not but include the reason why they would want to.
     #I would feel uncomfortable if they were notified without my consent
 
@@ -15,6 +15,8 @@ import os
 #cwd = os.getcwd()
 #textwrap.fill(cwd)
 
+#--------------BASIC FUNCTIONS FOR SIMPLICITY--------------#
+
 def textwrap_print(words):
     print(textwrap.fill(words,replace_whitespace=False))
 
@@ -23,22 +25,22 @@ def enter_yes_or_no(loop):
         print("I'm sorry. Just to make sure I understand completely, please enter either 'YES' or 'NO' \n")
 
 def help_ending():
-    print(textwrap.fill("""
-We know this all easier said than done, but just using this process is a step forward!
-
-If you need help with the above suggestion(s), please reach out to wecare@zappos.com and someone from HR will help you out.
-""",replace_whitespace=False))
+    #textwrap_print("""
+    #We know this all easier said than done, but just using this process is a step forward!
+#
+    #If you need help with the above suggestion(s), please reach out to wecare@zappos.com and someone from HR will help you out.
+    #""")
     print("\nBest of luck and have a wonderful day!")
 
 def nohelp_ending():
-    print(textwrap.fill("""
-If you need help with anything else, feel free to use this wizard again, or reach out to wecare@zappos.com and someone from HR will help you out.
-""",replace_whitespace=False))
+    print(textwrap.dedent("""
+        If you need help with anything else, feel free to use this wizard again,
+        or reach out to wecare@zappos.com and someone from HR will help you out.
+        """))
 
 print("LET THE TEST BEGIN!")
 
-#os.system('cls')  # on windows
-#os.system('clear')  # on linux / os x
+#--------------LOOP FUNCTIONS--------------#
 
 def agreed_upon_interpretation():
     while True:
@@ -63,7 +65,7 @@ def defined_in_huzzah():
         print(textwrap.fill("Do you agree with your Lead Link's interpretation of what that expectation entails? (i.e., Is your understanding of what you were supposed to do the same as what your Lead Link is saying you should have done?)"))
         mutual = input("".lower())
         #mutual = input(textwrap.fill("""Do you agree with your Lead Link's interpretation of what that expectation entails? I.E., is your understanding of what you were supposed to do the same as what your Lead Link is saying you should have done?\n
-#""")).lower()   
+#""")).lower()
         if mutual[0] == "y":
             agreed_upon_interpretation()
             break
@@ -74,10 +76,9 @@ def defined_in_huzzah():
         enter_yes_or_no(mutual)
         continue
 
-
 def example_was_given():
     while True:
-        given_example = input("Was the example you were given an expectation that is clearly defined in Huzzah?\n").lower()
+        given_example = input("Was the example you were given an expectation that is clearly defined in Huzzah? \n").lower()
         if given_example[0] == "y":
             #provided_expectation = input("Please copy/paste the exact expectation in question. \n").lower()
             #print("Thank you.")
@@ -89,7 +90,6 @@ def example_was_given():
             break
         enter_yes_or_no(given_example)
         continue
-
 
 def dun_been_questioned():
     while True:
@@ -104,7 +104,6 @@ def dun_been_questioned():
             break
         enter_yes_or_no(unclear_expectation)
         continue
-
 
 def base_script():
     while True:
@@ -124,7 +123,7 @@ base_script()
 #--------------TESTING: RE-RUN PROGRAM--------------#
 
 while True:
-    re_run = input("Do you want to re-run this wizard? \n").lower()
+    re_run = input("\n---Do you want to re-run this wizard?--- \n").lower()
     if re_run[0] == "y":
         base_script()
     if re_run[0] == "n":
