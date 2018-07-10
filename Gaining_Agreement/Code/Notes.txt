@@ -1,0 +1,9 @@
+To run server:
+python manage.py runserver
+
+Server:
+http://127.0.0.1:8000/admin/
+http://127.0.0.1:8000/polls/
+
+Currently working on:
+Part 3: https://docs.djangoproject.com/en/2.0/intro/tutorial03/
