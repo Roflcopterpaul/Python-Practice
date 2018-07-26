@@ -6,5 +6,6 @@ http://127.0.0.1:8000/admin/
 http://127.0.0.1:8000/polls/
 
 Currently working on:
-Part 5: https://docs.djangoproject.com/en/2.0/intro/tutorial05/
-  "Testing the DetailView"
+Nothing! You're fuckin' done with the tutorial, brah!
+
+https://docs.djangoproject.com/en/2.0/intro/whatsnext/
